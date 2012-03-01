@@ -13,6 +13,7 @@ To allow the use of the various Data-API methods you need to specify them when g
 - Please report issues and feature requests using [GitHub issues](https://github.com/socialreferral/omniauth-hyves/issues)
 
 Pull requests are welcome, please make sure your patches are well tested before contributing. When sending a pull request:
+
 - Use a topic branch for your change
 - Add tests for your changes
 - Do not change the version number
