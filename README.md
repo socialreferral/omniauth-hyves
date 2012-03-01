@@ -8,6 +8,10 @@ Use like it like any other OmniAuth strategy.
 
 To allow the use of the various Data-API methods you need to specify them when getting the request token, you can do so by specifying them in options.request_params[:methods] (the default and minimum required is 'users.get,friends.get,media.get').
 
+# Todo
+
+- Add tests
+
 # Development
 - Source hosted on [GitHub](https://github.com)
 - Please report issues and feature requests using [GitHub issues](https://github.com/socialreferral/omniauth-hyves/issues)
