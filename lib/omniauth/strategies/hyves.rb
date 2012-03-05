@@ -27,27 +27,6 @@ module OmniAuth
         }
       end
 
-      # override the default request_phase with the version from
-      # omniauth-oauth master, this allows the user of this implementation
-      # to pass in additional request parameters to the request to
-      # get the request token
-      def request_phase
-        request_token = consumer.get_request_token({:oauth_callback => callback_url}, options.request_params)
-        session['oauth'] ||= {}
-        session['oauth'][name.to_s] = {'callback_confirmed' => request_token.callback_confirmed?, 'request_token' => request_token.token, 'request_secret' => request_token.secret}
-
-        if request_token.callback_confirmed?
-          redirect request_token.authorize_url(options[:authorize_params])
-        else
-          redirect request_token.authorize_url(options[:authorize_params].merge(:oauth_callback => callback_url))
-        end
-
-      rescue ::Timeout::Error => e
-        fail!(:timeout, e)
-      rescue ::Net::HTTPFatalError, ::OpenSSL::SSL::SSLError => e
-        fail!(:service_unavailable, e)
-      end
-
       private
 
       def user_info
