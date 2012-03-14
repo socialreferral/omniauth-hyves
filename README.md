@@ -6,7 +6,7 @@ OAuth 1 strategy to authenticate with [Hyves](http://www.hyves.nl) to make use o
 
 Use like it like any other OmniAuth strategy.
 
-To allow the use of the various Data-API methods you need to specify them when getting the request token, you can do so by specifying them in options.request_params[:methods] (the default and minimum required is 'users.get,friends.get,media.get').
+To allow the use of the various Data-API methods you need to specify them when getting the request token, you can do so by specifying them in options.request_params\[:methods\] (the default and minimum required is 'users.get,friends.get,media.get').
 
 ## Development
 - Source hosted on [GitHub](https://github.com)
